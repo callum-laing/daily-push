@@ -1,6 +1,7 @@
+<script setup></script>
+
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+	<h1>daily-push</h1>
 </template>
+
+<style scoped></style>

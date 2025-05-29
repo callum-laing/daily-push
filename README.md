@@ -1,75 +1,49 @@
-# Nuxt Minimal Starter
+# 📝 daily-push
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**A personal blog CMS to track my web development journey — built with Nuxt.**
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 📘 Overview
 
-```bash
-# npm
-npm install
+I wanted a simple, lightweight way to log my daily progress as a developer — not in a Notion doc, not in Markdown files, but something I built and use every day.
 
-# pnpm
-pnpm install
+I looked around for tools that fit my workflow and felt _just right_. Nothing quite did. So... I built it myself.
 
-# yarn
-yarn install
+The goal of **daily-push** is simple:
 
-# bun
-bun install
-```
+- ✅ Log daily wins, struggles, and lessons
+- ✅ Add entries through a clean, admin-only interface (no more writing posts in the code)
+- ✅ Build consistency, reflection, and momentum — all while improving my dev skills
 
-## Development Server
+This project started with a question:
 
-Start the development server on `http://localhost:3000`:
+> _“How can I keep myself accountable with my learning?”_
 
-```bash
-# npm
-npm run dev
+---
 
-# pnpm
-pnpm dev
+## 🚀 Tech Stack
 
-# yarn
-yarn dev
+- **Nuxt 3**
+- **Vue 3 Composition API**
+- **Tailwind CSS** (or SCSS — TBD)
+- (Later: **Supabase** or **Firebase** for auth + database - also TBD)
 
-# bun
-bun run dev
-```
+---
 
-## Production
+## 🔧 Features (in progress)
 
-Build the application for production:
+| Feature                        | Status         |
+| ------------------------------ | -------------- |
+| List of blog entries           | 🔄 In progress |
+| Admin-only form to post logs   | 🔜 Planned     |
+| Edit/delete entries            | 🔜 Planned     |
+| Authentication (admin-only)    | 🔜 Planned     |
+| Data persistence (Supabase/DB) | 🔜 Planned     |
+| Responsive & minimal design    | 🔄 Planned     |
 
-```bash
-# npm
-npm run build
+---
 
-# pnpm
-pnpm build
+## 🔗 Live Demo
 
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+_Deploying soon on Cloudflare..._
