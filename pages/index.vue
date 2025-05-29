@@ -1,9 +1,7 @@
 <script setup></script>
 
 <template>
-	<NuxtLayout>
-		<NuxtPage />
-	</NuxtLayout>
+	<h1>Welcome to my accountability tracker.</h1>
 </template>
 
 <style scoped></style>

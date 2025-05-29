@@ -1,9 +1,7 @@
 <script setup></script>
 
 <template>
-	<NuxtLayout>
-		<NuxtPage />
-	</NuxtLayout>
+	<h2>Create a task.</h2>
 </template>
 
 <style scoped></style>
