@@ -1,4 +1,4 @@
-<script setup></script>
+<!-- <script setup></script>
 
 <template>
 	<h2>Blogging my journey through Web Development.</h2>
@@ -31,4 +31,29 @@
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped></style> -->
+
+<script setup lang="ts">
+import { useEntriesStore } from '~/stores/entries'
+
+const entriesStore = useEntriesStore()
+</script>
+
+<template>
+  <div class="max-w-xl mx-auto mt-10">
+    <h1 class="text-2xl mb-4">Entries</h1>
+    <div
+      v-for="(entry, index) in entriesStore.entries"
+      :key="entry.date + index"
+      class="mb-6 border p-4 rounded shadow"
+    >
+      <p><strong>Date:</strong> {{ entry.date }}</p>
+      <p><strong>Wins:</strong> {{ entry.wins }}</p>
+      <p><strong>Struggles:</strong> {{ entry.struggles }}</p>
+      <p><strong>Notes:</strong> {{ entry.notes }}</p>
+    </div>
+    <p v-if="entriesStore.entries.length === 0" class="italic text-gray-600">
+      No entries yet. Create one!
+    </p>
+  </div>
+</template>
