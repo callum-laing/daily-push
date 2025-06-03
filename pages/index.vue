@@ -5,6 +5,12 @@
 
 	<div class="content">
 		<article class="day">
+			<h4>03.06.25</h4>
+			<p>Wins: I survived another day.</p>
+			<p>Struggles: Maintaining a consistent routine of coding everyday is extremely challenging. Though I'm still studying over the weekends, I'm not physically coding as I'm rarely at home over the weekends.</p>
+			<p>Notes: I really need to try and do at least 30 minutes of coding a day, even if it's just adding a function, or even some styling to my apps.</p>
+		</article>
+		<article class="day">
 			<h4>Date: 31.05.25</h4>
 			<p>
 				Wins: I've managed to get the bare bones setup so far, create post/admin login will be
