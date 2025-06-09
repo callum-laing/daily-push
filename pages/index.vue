@@ -4,6 +4,16 @@ import { ref, onMounted } from 'vue';
 const supabase = useNuxtApp().$supabase;
 const posts = ref([]);
 
+const formatDate = (dateStr: string) => {
+	if (!dateStr) return '';
+	const date = new Date(dateStr);
+	return date.toLocaleDateString('en-GB', {
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric'
+	});
+};
+
 onMounted(async () => {
 	const { data, error } = await supabase
 		.from('posts')
@@ -21,15 +31,31 @@ onMounted(async () => {
 </script>
 
 <template>
-	<div class="max-w-xl mx-auto mt-10">
-		<h1 class="text-2xl mb-4">Entries</h1>
-
-		<div v-for="post in posts" :key="post.id" class="mb-6 border p-4 rounded shadow">
-			<p><strong>Date:</strong> {{ post.date }}</p>
-			<p><strong>Title:</strong> {{ post.title }}</p>
-			<p><strong>Notes:</strong> {{ post.notes }}</p>
+	<div>
+		<hr />
+		<div class="entry-card" v-for="post in posts" :key="post.id">
+			<p class="entry-date">{{ formatDate(post.date) }}</p>
+			<p class="entry-title">{{ post.title }}</p>
+			<p class="entry-notes">{{ post.notes }}</p>
 		</div>
 
-		<p v-if="posts.length === 0" class="italic text-gray-600">No entries yet. Create one!</p>
+		<p v-if="posts.length === 0">No entries yet. Create one!</p>
 	</div>
 </template>
+
+<style scoped>
+.entry-card {
+	border-radius: 5px;
+	max-width: 600px;
+	padding: 0.5em;
+}
+
+.entry-date,
+.entry-title {
+	font-weight: bold;
+}
+
+.entry-date {
+	font-style: italic;
+}
+</style>
