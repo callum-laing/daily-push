@@ -9,4 +9,8 @@
 	</div>
 </template>
 
-<style scoped></style>
+<style>
+body {
+	min-height: 100vh;
+}
+</style>

@@ -31,12 +31,16 @@ onMounted(async () => {
 </script>
 
 <template>
-	<div>
+	<div class="flex-container">
+		<p class="intro">
+			<i>This is where I log my bursts of productivity, powered by guilt and caffeine..</i>
+		</p>
 		<hr />
 		<div class="entry-card" v-for="post in posts" :key="post.id">
+			<h4 class="entry-title">{{ post.title }}</h4>
 			<p class="entry-date">{{ formatDate(post.date) }}</p>
-			<p class="entry-title">{{ post.title }}</p>
 			<p class="entry-notes">{{ post.notes }}</p>
+			<hr />
 		</div>
 
 		<p v-if="posts.length === 0">No entries yet. Create one!</p>
@@ -44,10 +48,19 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+.flex-container {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
 .entry-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	border-radius: 5px;
-	max-width: 600px;
+	max-width: 800px;
 	padding: 0.5em;
+	margin: 2em 0;
 }
 
 .entry-date,
