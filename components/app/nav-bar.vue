@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup lang="ts">
+const supabase = useNuxtApp().$supabase;
+const session = ref(null);
+
+onMounted(async () => {
+	const { data } = await supabase.auth.getSession();
+	session.value = data.session;
+});
+</script>
 
 <template>
 	<nav class="container">
@@ -8,14 +16,8 @@
 			</NuxtLink>
 		</ul>
 		<ul>
-			<li>
-				<NuxtLink :to="{ name: 'create' }">Create Post</NuxtLink>
-			</li>
-			<li>
-				<NuxtLink :to="{ name: 'admin-login' }">Admin Login</NuxtLink>
-			</li>
+			<li v-if="session"><NuxtLink to="/create">Create Post</NuxtLink></li>
+			<li v-else><NuxtLink to="/admin-login">Admin Login</NuxtLink></li>
 		</ul>
 	</nav>
 </template>
-
-<style scoped></style>

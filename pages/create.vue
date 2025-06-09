@@ -1,69 +1,54 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import { useEntriesStore } from '~/stores/entries';
 
-const date = ref('');
-const wins = ref('');
-const struggles = ref('');
-const notes = ref('');
-
-const entriesStore = useEntriesStore();
+const supabase = useNuxtApp().$supabase;
 const router = useRouter();
 
-function handleSubmit() {
-	entriesStore.addEntry({
-		date: date.value,
-		wins: wins.value,
-		struggles: struggles.value,
-		notes: notes.value
-	});
+const date = ref('');
+const title = ref('');
+const notes = ref('');
 
-	date.value = '';
-	wins.value = '';
-	struggles.value = '';
-	notes.value = '';
+onMounted(async () => {
+	const { data } = await supabase.auth.getSession();
+	if (!data.session) {
+		router.push('/admin-login');
+	}
+});
 
-	router.push('/');
-}
+const handleSubmit = async () => {
+	const { error } = await supabase
+		.from('posts')
+		.insert([{ date: date.value, title: title.value, notes: notes.value }]);
+
+	if (error) {
+		alert('Error submitting post: ' + error.message);
+		console.error(error);
+		return;
+	}
+
+	window.location.href = '/';
+};
 </script>
 
 <template>
-	<h2>Create a Post.</h2>
-
+	<h2>Create a Post</h2>
 	<form @submit.prevent="handleSubmit">
 		<label for="date">Date:</label>
 		<input id="date" type="date" v-model="date" required />
 
-		<label for="wins">Wins:</label>
-		<textarea
-			id="wins"
-			placeholder="Write about any wins you had today..."
-			aria-label="paragraph about any wins"
-			v-model="wins"
+		<label for="title">Title:</label>
+		<input
+			id="title"
+			type="text"
+			v-model="title"
+			placeholder="e.g. Today was a STRUGGLE."
 			required
-		></textarea>
-
-		<label for="struggles">Struggles:</label>
-		<textarea
-			id="struggles"
-			placeholder="Write about any struggles you had today..."
-			aria-label="paragraph about struggles"
-			v-model="struggles"
-			required
-		></textarea>
+		/>
 
 		<label for="notes">Notes:</label>
-		<textarea
-			id="notes"
-			placeholder="Write about anything else..."
-			aria-label="additional info"
-			v-model="notes"
-			required
-		></textarea>
+		<textarea id="notes" v-model="notes" placeholder="Details..." required></textarea>
 
 		<input type="submit" value="Submit" />
 	</form>
 </template>
-
-<style scoped></style>
