@@ -38,13 +38,7 @@ const handleSubmit = async () => {
 		<input id="date" type="date" v-model="date" required />
 
 		<label for="title">Title:</label>
-		<input
-			id="title"
-			type="text"
-			v-model="title"
-			placeholder="e.g. Today was a STRUGGLE."
-			required
-		/>
+		<input id="title" type="text" v-model="title" placeholder="How'd today go?" required />
 
 		<label for="notes">Notes:</label>
 		<textarea id="notes" v-model="notes" placeholder="Details..." required></textarea>

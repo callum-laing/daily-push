@@ -47,27 +47,6 @@ onMounted(async () => {
 	</div>
 </template>
 
-<!-- <style scoped>
-.flex-container {
-	background-color: #f1f1f1;
-}
-.entry-card {
-	border-radius: 5px;
-	max-width: 1200px;
-	padding: 0.5em;
-	margin: 2em 0;
-}
-
-.entry-date,
-.entry-title {
-	font-weight: bold;
-}
-
-.entry-date {
-	font-style: italic;
-}
-</style> -->
-
 <style scoped>
 .flex-container {
 	background-color: #121212;
