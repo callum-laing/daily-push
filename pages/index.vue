@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
+interface Post {
+	id: number | string;
+	title: string;
+	date: string;
+	notes: string;
+}
+
 const supabase = useNuxtApp().$supabase;
-const posts = ref([]);
+const posts = ref<Post[]>([]);
 
 const formatDate = (dateStr: string) => {
 	if (!dateStr) return '';

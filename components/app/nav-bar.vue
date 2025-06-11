@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { Session } from '@supabase/supabase-js';
+
 const supabase = useNuxtApp().$supabase;
-const session = ref(null);
+const session = ref<Session | null>(null);
 
 onMounted(async () => {
 	const { data } = await supabase.auth.getSession();
