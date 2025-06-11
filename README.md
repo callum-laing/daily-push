@@ -26,8 +26,8 @@ This project started with a question:
 
 - **Nuxt 3**
 - **Vue 3 Composition API**
-- **Tailwind CSS** (or SCSS — TBD)
-- (Later: **Supabase** or **Firebase** for auth + database - also TBD)
+- **Pico CSS**
+- **Supabase**
 
 ---
 
@@ -36,11 +36,11 @@ This project started with a question:
 | Feature                        | Status         |
 | ------------------------------ | -------------- |
 | List of blog entries           | 🔄 In progress |
-| Admin-only form to post logs   | 🔜 Planned     |
+| Admin-only form to post logs   | ✅ Complete    |
 | Edit/delete entries            | 🔜 Planned     |
-| Authentication (admin-only)    | 🔜 Planned     |
-| Data persistence (Supabase/DB) | 🔜 Planned     |
-| Responsive & minimal design    | 🔄 Planned     |
+| Authentication (admin-only)    | ✅ Complete    |
+| Data persistence (Supabase/DB) | ✅ Complete    |
+| Responsive & minimal design    | 🔄 In progress |
 
 ---
 
