@@ -46,4 +46,4 @@ This project started with a question:
 
 ## 🔗 Live Demo
 
-_Deploying soon on Cloudflare..._
+Now live on [Cloudflare Pages](https://daily-push.pages.dev/) — check it out!
