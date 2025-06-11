@@ -47,18 +47,13 @@ onMounted(async () => {
 	</div>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .flex-container {
-	display: grid;
-	align-items: center;
-	justify-items: center;
+	background-color: #f1f1f1;
 }
 .entry-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	border-radius: 5px;
-	max-width: 800px;
+	max-width: 1200px;
 	padding: 0.5em;
 	margin: 2em 0;
 }
@@ -70,5 +65,46 @@ onMounted(async () => {
 
 .entry-date {
 	font-style: italic;
+}
+</style> -->
+
+<style scoped>
+.flex-container {
+	background-color: #121212;
+	color: #e0e0e0;
+	padding: 2em;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.intro {
+	color: #8be9fd;
+	font-size: 1.1em;
+	margin-bottom: 1em;
+}
+
+.entry-card {
+	background-color: #1e1e2f;
+	border-radius: 10px;
+	padding: 1em 1.5em;
+	margin: 2em 0;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.entry-title {
+	color: #ff79c6;
+	font-size: 1.3em;
+	margin-bottom: 0.2em;
+}
+
+.entry-date {
+	font-style: italic;
+	color: #aaa;
+	font-size: 0.9em;
+}
+
+.entry-notes {
+	margin-top: 0.5em;
+	line-height: 1.6;
 }
 </style>

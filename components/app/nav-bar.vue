@@ -21,3 +21,36 @@ onMounted(async () => {
 		</ul>
 	</nav>
 </template>
+
+<style scoped>
+nav.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em 2em;
+	background-color: #1e1e2f;
+	border-bottom: 1px solid #444;
+	color: #e0e0e0;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+ul {
+	display: flex;
+	gap: 1.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: #8be9fd;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+	color: #ff79c6;
+}
+</style>
